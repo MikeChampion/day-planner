@@ -2,29 +2,45 @@ document.querySelectorAll(".saveBtn").forEach((btn) => {
     btn.addEventListener("click", saveTask);
 });
 let hours = document.querySelectorAll(".time-block");
+document.querySelector("#currentDay").innerHTML =
+    moment().format("MMMM Do YYYY");
 
 function saveTask() {
     let hour = $(this).parent().attr("id");
     let task = $(this).siblings(".description").val();
     localStorage.setItem(hour, task);
-    console.log(hour);
 }
 
 function updateTime() {
     var currentHour = moment().hours();
-    // console.log(hours);
+    hours.forEach((hour) => {
+        console.log(hour.id);
+        if (hour.id < currentHour) {
+            console.log(hour.id);
+            $(this).addClass("past");
+        } else if (hour.id === currentHour) {
+            console.log(hour.id);
+            $(this).removeClass("past");
+            $(this).addClass("present");
+        } else {
+            console.log(hour.id);
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
+    });
 }
 
 updateTime();
 
 let timeCheck = setInterval(updateTime, 30000);
 
-$("#9a .description").val(localStorage.getItem("9a"));
-$("#10a .description").val(localStorage.getItem("10a"));
-$("#11a .description").val(localStorage.getItem("11a"));
-$("#12p .description").val(localStorage.getItem("12p"));
-$("#1p .description").val(localStorage.getItem("1p"));
-$("#2p .description").val(localStorage.getItem("2p"));
-$("#3p .description").val(localStorage.getItem("3p"));
-$("#4p .description").val(localStorage.getItem("4p"));
-$("#5p .description").val(localStorage.getItem("5p"));
+$("#9 .description").val(localStorage.getItem("9"));
+$("#10 .description").val(localStorage.getItem("10"));
+$("#11 .description").val(localStorage.getItem("11"));
+$("#12 .description").val(localStorage.getItem("12"));
+$("#1 .description").val(localStorage.getItem("1"));
+$("#2 .description").val(localStorage.getItem("2"));
+$("#3 .description").val(localStorage.getItem("3"));
+$("#4 .description").val(localStorage.getItem("4"));
+$("#5 .description").val(localStorage.getItem("5"));
