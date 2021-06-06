@@ -21,24 +21,22 @@ textarea {
     border-bottom: 10px solid black;
 }
 
-.description {
-    white-space: pre-wrap;
-    /* MY ADDITIONS */
-    /* width: 10rem; */
+.container {
+    margin-bottom: 2rem;
 }
 
-/* MY ADDITIONS */
+.description {
+    white-space: pre-wrap;
+}
+
+/* MY CLASS */
 i.fas {
     font-size: 1.5rem;
-    /* padding: 0 0.75rem; */
 }
 
 .time-block {
     text-align: center;
     border-radius: 15px;
-    /* MY ADDITIONS */
-    /* width: 80%; */
-    /* margin-bottom: 5px; */
 }
 
 .row {
@@ -47,19 +45,10 @@ i.fas {
     border-top: 1px solid white;
 }
 
-/* MY ADDITIONS */
-/* td > p {
-    text-align: right;
-    padding: 0.25rem 0.25rem 0 0;
-} */
-
 .hour {
     background-color: #ffffff;
     color: #000000;
     border-top: 1px dashed #000000;
-
-    /* MY ADDITIONS */
-    /* width: 5rem; */
 }
 
 .hour > p {
@@ -98,5 +87,22 @@ i.fas {
 .saveBtn i:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+    /* MY ADDITIONS */
     color: black;
 }
+
+/* BEGIN TABLET STYLING */
+/* @media screen and (min-width: 768px) {
+    .container {
+        margin-bottom: 2rem;
+        width: 95%;
+    }
+} */
+
+/* BEING DESKTOP STYLING */
+/* @media screen and (min-width: 1024px) {
+    .container {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+} */

@@ -13,21 +13,20 @@ function saveTask() {
 
 function updateTime() {
     var currentHour = moment().hours();
-    // let hours = document.querySelectorAll(".time-block");
     $(".time-block").each(function () {
         let hour = parseInt($(this).attr("id"));
-        //Number(hour.id);
-        // hours.forEach((hour) => {
-        //     Number(hour.id);
         if (hour < currentHour) {
             $(this).addClass("past");
+            console.log("updated");
         } else if (hour === currentHour) {
             $(this).removeClass("past");
             $(this).addClass("present");
+            console.log("updated");
         } else {
             $(this).removeClass("past");
             $(this).removeClass("present");
             $(this).addClass("future");
+            console.log("updated");
         }
     });
 }
