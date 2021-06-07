@@ -28,17 +28,14 @@ function updateTime() {
             $(this).addClass("past");
             $(this).removeClass("present");
             $(this).removeClass("future");
-            console.log("past");
         } else if (hour === currentHour) {
             $(this).removeClass("past");
             $(this).addClass("present");
             $(this).removeClass("future");
-            console.log("present");
         } else {
             $(this).removeClass("past");
             $(this).removeClass("present");
             $(this).addClass("future");
-            console.log("future");
         }
     });
 }
